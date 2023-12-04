@@ -1,0 +1,15 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  {{ if .IsHome }}
+    {{ site.Title }}
+  {{ else if .Title }}
+    {{ printf "%s | %s" .Title site.Title }}
+  {{ else }}
+    {{ title (replace (trim .File.Dir "/\\") "-" " ") }}
+    {{ title (replace .File.BaseFileName "-" " ") }}
+    {{ printf "| %s" site.Title }}
+  {{ end }}
+</title>
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}

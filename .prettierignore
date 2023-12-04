@@ -1,0 +1,6 @@
+/dist
+/bin
+/tmp
+/build
+**/styles.html
+**/shortcodes

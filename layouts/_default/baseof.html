@@ -1,0 +1,27 @@
+<!doctype html>
+<html
+  lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+  dir="{{ or site.Language.LanguageDirection `ltr` }}"
+>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body
+    class="py-12 px-6 prose prose-invert md:prose-lg lg:prose-xl xl:prose-2xl prose-yellow mx-auto"
+  >
+    <header>
+      {{ partial "header.html" . }}
+    </header>
+    <main>
+      <article>
+        {{ block "main" . }}{{ end }}
+      </article>
+      <hr />
+      {{ partial "list-race.html" . }}
+    </main>
+    <hr />
+    <footer class="prose-sm md:prose-md">
+      {{ partial "footer.html" . }}
+    </footer>
+  </body>
+</html>

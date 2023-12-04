@@ -1,0 +1,17 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Warcraft Race/Class Compendium'
+enableGitInfo = true
+[frontmatter]
+  lastmod = ['lastmod', ':fileModTime', ':default']
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"

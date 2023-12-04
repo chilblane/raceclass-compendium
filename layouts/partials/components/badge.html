@@ -1,0 +1,30 @@
+{{/* Based on https://gitlab.com/Roneo/hugo-shortcode-roneo-button-icon-badge */}}
+
+{{- if not .text }}
+  {{- errorf "Missing required 'text'. Partial: 'badge'." -}}
+{{- end }}
+
+{{- $text := .text -}}
+{{- $kind := .kind | default "base" -}}
+{{- $styling := "" -}}
+{{- $svg := "" -}}
+{{- $tooltip := .tooltip -}}
+
+{{- $textColor := index (dict "base" "text-stone-300" "positive" "text-green-500" "negative" "text-red-500") $kind -}}
+{{- $borderColor := index (dict "base" "border-stone-300" "positive" "border-green-500" "negative" "border-red-500") $kind -}}
+{{- $styling = printf "%s rounded inline-flex text-sm uppercase %s %s border border-solid px-1 py-0.5" $styling $textColor $borderColor -}}
+{{- $styling = trim $styling " " -}}
+
+
+<span
+  {{ with $tooltip }}title="{{ . }}"{{ end }}
+  aria-label="{{ $text | safeHTML }}"
+  class="badge {{ $styling }} {{ with $kind }}{{ . }}{{ end }}"
+>
+  {{- with .icon }}
+    <span class="flex grow-0 shrink-0 self-center leading-none">
+      {{ partial "components/icon.html" . }}
+    </span>
+  {{- end }}
+  <span class="grow shrink mx-0.5">{{ $text | safeHTML }}</span>
+</span>

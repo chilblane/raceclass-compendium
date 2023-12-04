@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1
+    class="flex flex-col md:flex-row items-start md:items-center justify-between gap-1 md:gap-3"
+  >
+    {{ title (replace (trim .File.Dir "/\\") "-" " ") }}
+    {{ title (replace .File.BaseFileName "-" " ") }}
+    {{ partial "playable-badge.html" .Params.exists }}
+  </h1>
+  <p>
+    {{ .Content }}
+  </p>
+  <p class="text-sm">Last Updated {{ .Lastmod | time.Format ":date_long" }}</p>
+{{ end }}

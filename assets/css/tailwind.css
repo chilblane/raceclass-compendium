@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-stone-900;
+    @apply text-stone-300;
+    @apply text-base;
+    @apply leading-normal;
+    /* background-image: linear-gradient(
+      rgba(0, 0, 0, 0.1) 0,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+    background-attachment: fixed;
+    background-size: auto 5px; */
+  }
+  a {
+    &:hover,
+    &:focus {
+      @apply text-yellow-300;
+    }
+  }
+  p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  p a {
+    text-decoration: underline;
+  }
+}

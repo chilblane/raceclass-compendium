@@ -1,0 +1,11 @@
+{{ $svg := resources.Get (print "svg/icon-" . ".svg") }}
+<span
+  class="inline-block shrink-0 leading-none w-3.5 h-3.5 mx-0.5"
+  aria-hidden="true"
+>
+  {{- $svgTag:="<svg" -}}
+  {{- $newSvgTag:="<svg class=\"inline text-current w-full h-full align-bottom\"" -}}
+  {{- $path:="<path" -}}
+  {{- $newPath:="<path fill=\"none\" class=\"fill-current\"" -}}
+  {{ replace (replace ($svg.Content) $path $newPath | safeHTML) $svgTag $newSvgTag | safeHTML }}
+</span>

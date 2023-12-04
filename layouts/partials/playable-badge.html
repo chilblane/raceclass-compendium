@@ -1,0 +1,13 @@
+{{ $exists := . }}
+
+{{ if eq $exists "playable" }}
+  {{ partial "components/badge.html" (dict "text" "Playable" "icon" "check" "kind" "positive" "tooltip" "This combination is playable in-game") }}
+{{ else if eq $exists "inGame" }}
+  {{ partial "components/badge.html" (dict "text" "In game" "icon" "wow" "tooltip" "A NPC exists in WoW with this combination") }}
+{{ else if eq $exists "inLore" }}
+  {{ partial "components/badge.html" (dict "text" "In lore" "icon" "book" "tooltip" "This combination has existed in Warcraft lore") }}
+{{ else if eq $exists "inHS" }}
+  {{ partial "components/badge.html" (dict "text" "In HS" "icon" "hearthstone" "tooltip" "This combination has been shown in Hearthstone") }}
+{{ else if eq $exists "nonexistent" }}
+  {{ partial "components/badge.html" (dict "text" "Nonexistent" "icon" "xmark" "kind" "negative" "tooltip" "No evidence of this combination exists") }}
+{{ end }}
