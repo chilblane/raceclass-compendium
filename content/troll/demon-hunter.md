@@ -2,4 +2,4 @@
 exists: inHS
 ---
 
-test test
+This page is currently a stub.

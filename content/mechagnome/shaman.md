@@ -2,4 +2,4 @@
 exists: nonexistent
 ---
 
-test test
+This page is currently a stub.
