@@ -19,7 +19,7 @@
 <span
   {{ with $tooltip }}title="{{ . }}"{{ end }}
   aria-label="{{ $text | safeHTML }}"
-  class="badge {{ $styling }} {{ with $kind }}{{ . }}{{ end }}"
+  class="badge not-prose {{ $styling }} {{ with $kind }}{{ . }}{{ end }}"
 >
   {{- with .icon }}
     <span class="flex grow-0 shrink-0 self-center leading-none">

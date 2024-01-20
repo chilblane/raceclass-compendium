@@ -10,4 +10,28 @@
     {{ .Content }}
   </p>
   <p class="text-sm">Last Updated {{ .Lastmod | time.Format ":date_long" }}</p>
+  <hr />
+  {{ $c := .File.BaseFileName }}
+  {{ $s := .Section }}
+  <h3>Other {{ title (replace .File.BaseFileName "-" " ") }} Races</h3>
+  <ul class="my-8 lg:columns-2 !pl-0">
+    {{ range .Site.RegularPages }}
+      {{ if eq .File.BaseFileName $c }}
+        {{ if ne .Section $s }}
+          <li
+            class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3 !mt-0 !mb-4 !pl-0"
+          >
+            <a
+              href="{{ .RelPermalink }}"
+              class="text-xl md:text-2xl lg:text-3xl font-bold no-underline"
+            >
+              {{- title (replace .Section "-" " ") -}}
+            </a>
+
+            {{ partial "playable-badge.html" .Params.exists }}
+          </li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ul>
 {{ end }}
