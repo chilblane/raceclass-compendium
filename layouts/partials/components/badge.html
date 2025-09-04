@@ -10,8 +10,8 @@
 {{- $svg := "" -}}
 {{- $tooltip := .tooltip -}}
 
-{{- $textColor := index (dict "base" "text-stone-300" "positive" "text-green-500" "negative" "text-red-500") $kind -}}
-{{- $borderColor := index (dict "base" "border-stone-300" "positive" "border-green-500" "negative" "border-red-500") $kind -}}
+{{- $textColor := index (dict "base" "text-stone-300" "positive" "text-green-500" "warning" "text-yellow-500" "negative" "text-red-500") $kind -}}
+{{- $borderColor := index (dict "base" "border-stone-300" "positive" "border-green-500" "warning" "border-yellow-500" "negative" "border-red-500") $kind -}}
 {{- $styling = printf "%s rounded inline-flex text-sm uppercase %s %s border border-solid px-1 py-0.5" $styling $textColor $borderColor -}}
 {{- $styling = trim $styling " " -}}
 

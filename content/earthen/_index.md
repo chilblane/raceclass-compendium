@@ -4,4 +4,4 @@ faction: neutral
 recruitment: allied
 ---
 
-The Earthen are an upcoming playable allied race in World of Warcraft. They will be introduced in The War Within and be playable as both Alliance and Horde, making them the first neutral allied race.
+The Earthen are a titan-forged race made of living stone imbued with the essence of Azeroth's worldsoul. These ancient denizens are freshly freed from the edicts that have bound them and now venture forth with limitless curiosity to ally with the Alliance and Horde and explore the world.

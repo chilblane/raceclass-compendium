@@ -2,6 +2,8 @@
 
 {{ if eq $exists "playable" }}
   {{ partial "components/badge.html" (dict "text" "Playable" "icon" "check" "kind" "positive" "tooltip" "This combination is playable in-game") }}
+{{ else if eq $exists "upcoming" }}
+  {{ partial "components/badge.html" (dict "text" "Upcoming" "icon" "hourglass" "kind" "warning" "tooltip" "This combination will soon be playable in-game") }}
 {{ else if eq $exists "inGame" }}
   {{ partial "components/badge.html" (dict "text" "In game" "icon" "wow" "tooltip" "A NPC exists in WoW with this combination") }}
 {{ else if eq $exists "inLore" }}
